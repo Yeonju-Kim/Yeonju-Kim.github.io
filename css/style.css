@@ -240,7 +240,12 @@ header {
     height: 65px;
 }
 
+nav a {
+  float: left;
+}
 nav ul {
+  float: right;
+
     display: inline-block;
     padding-left: 0;
     list-style: none;
