@@ -398,20 +398,25 @@ a{
 }
 
 .timeline-event-copy {
-    padding: 2em;
+    padding: 1.8em;
     position: relative;
     top: -1.875em;
     left: 4em;
     width: 100%;
 }
 
+
+
+
 .timeline-event-copy h3 {
-    font-size: 1.75em;
+    font-size: 1.3em;
+    margin-bottom: 0.7em;
+
 }
 
 .timeline-event-copy h4 {
-    font-size: 1.2em;
-    margin-bottom: 1.2em;
+    font-size: 1.0em;
+    margin-bottom: 0.7em;
 }
 
 .timeline-event-copy strong {
@@ -419,7 +424,7 @@ a{
 }
 
 .timeline-event-copy p:not(.timeline-event-thumbnail) {
-    padding-bottom: 1.2em;
+    padding-bottom: 0em;
 }
 
 .timeline-event-icon {
@@ -429,15 +434,15 @@ a{
     transition: transform 0.2s ease-in, -webkit-transform 0.2s ease-in;
     -webkit-transform: rotate(45deg);
     transform: rotate(45deg);
-    background-color: #425BB5;
-    outline: 10px solid #f3f3f3;
+    background-color: #000000;
+    outline: 5px solid #f3f3f3;
     display: block;
     margin: 0.5em 0.5em 0.5em -0.5em;
     position: absolute;
     top: 0;
-    left: 2em;
-    width: 1em;
-    height: 1em;
+    left: 2.2em;
+    width: 0.5em;
+    height: 0.5em;
 }
 
 .timeline-event-thumbnail {
@@ -453,7 +458,7 @@ a{
     background-color: black;
     box-shadow: inset 0 0 0 0em #425BB5;
     display: inline-block;
-    margin-bottom: 1.2em;
+    margin-bottom: 0.1em;
     padding: 0.25em 1em 0.2em 1em;
 }
 
@@ -593,8 +598,8 @@ a{
 }
 
 .portfolio_item img {
-    -webkit-filter: grayscale(100%);
-    filter: grayscale(100%);
+    -webkit-filter: grayscale(0%);
+    filter: grayscale(0%);
 }
 
 .portfolio-padding {
