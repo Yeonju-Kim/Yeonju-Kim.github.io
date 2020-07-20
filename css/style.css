@@ -315,7 +315,7 @@ a{
 ==================================================*/
 
 #about {
-    padding: 100px 0;
+    padding: 160px 0;
 }
 
 .about-img-div img {
@@ -335,7 +335,7 @@ a{
 /* education section
 ==================================================*/
 #education {
-    padding: 100px 0;
+    padding: 30px 0;
 }
 
 
@@ -343,7 +343,7 @@ a{
 ==================================================*/
 
 #experience {
-    padding: 100px 0;
+    padding: 30px 0;
     background: #f3f3f3
 }
 
@@ -473,7 +473,7 @@ a{
 ==================================================*/
 
 #projects {
-    padding: 100px 0;
+    padding: 30px 0;
 }
 
 .portfolio .categories-grid span {
@@ -656,7 +656,7 @@ a{
 ==================================================*/
 
 #contact {
-    padding: 100px 0;
+    padding: 30px 0;
     background: #f3f3f3
 }
 
