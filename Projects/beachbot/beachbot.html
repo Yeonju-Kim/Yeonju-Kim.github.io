@@ -24,6 +24,11 @@
         #contents {
             padding: 160px 0;
         }
+                img {
+           display : block;
+            margin : auto;
+            }
+
 
     </style>
 </head>
@@ -53,15 +58,78 @@
     </header>
     <div class="section" id="contents">
         <div class="col-md-8 col-md-offset-2">
-            <h2>Beersheba, 2015</h2>
+            <h2>Design, Fabrication, and Testing of a Rake for the Beachbot Robot</h2>
+            <h4>Disney Research Zurich & ETH Zurich</h4>
             <div class="h-50"></div>
-            <p>Visualization of <strong>Beersheba</strong> in Italo Calvino's novel Invisible Cities, the Final project
-                of the class <strong>Media Fundamentals 2</strong> in Seoul National University College of Fine Arts. </p>
-            <div class="col-md-8 col-md-offset-2">
-                <div class="h-50"></div>
-                <img src="beersheba/08.jpg" alt="" class="img-responsive" />
-                <div class="h-50"></div>
-            </div>
+            <p>
+                The Beachbot project was initiated by Disney Research Zurich.
+                The Beachbot is an autonomous mobile robot that can create large scale sand art with a rake attached
+                at the tail of the robot. The rake system consists of seven movable elements actuated by servo motors.
+                <strong>The previous rake design was prone to damage. </strong> It was easy to go up when a rake hit an obstacle in the sand.
+                This unexpected motion induces the servomotor to rotate in the opposite direction to which it should go.
+                The rotation in the wrong direction while powered on damages the servomotor. </p>
+<!--            <div class="col-md-8 col-md-offset-2">-->
+<!--                <div class="h-50"></div>-->
+<!--                <div class="h-50"></div>-->
+        </div>
+        <div class="col-md-4 col-md-offset-4">
+            <figure>
+                <img src="img/pre_design.jpg"  class="img-responsive" />
+                <figcaption style="text-align: center; font-size: 13px;" >Figure 1. The original design of the rake system.</figcaption>
+            </figure>
+            <br/>
+        </div>
+        <div class="col-md-8 col-md-offset-2">
+
+            <p>The goal of this project is to identify <strong>a more robust design </strong>for the rake and then do fabrication,
+                integration with the rake’s control system, and testing. The problem of the previous design can be solved
+                by two different approaches. The first approach is to make a guide structure for moving constraints
+                on the rake. The second approach is to get rid of the linkage between
+                servomotor and rake in order not to exert a force to the servomotor directly. To remove the linkage,
+                we designed hooks attached to the servomotor to transfer the force by pushing the rake.</p>
+<!--            <div class="col-md-8 col-md-offset-2">-->
+<!--                <div class="h-50"></div>-->
+<!--                <video autoplay controls loop muted >-->
+<!--                    <source src="img/guidance_video.mp4" type="video/mp4">-->
+<!--                    Your browser does not support the video tag.-->
+<!--                </video>-->
+<!--                <div class="h-50"></div>-->
+<!--            </div>-->
+        </div>
+        <div class="col-md-6 col-md-offset-3">
+            <br/>
+            <figure>
+                <img src="img/slidinglinkage.JPG" class="img-responsive"  />
+                <figcaption style="text-align: center; font-size: 13px;" >Figure 2. The first approach: A guide structure</figcaption>
+            </figure>
+            <br/>
+            <figure>
+                <img src="img/go_upper_ver3.png" class="img-responsive"  />
+                <img src="img/go_lower_ver3.png" class="img-responsive"  />
+                <figcaption style="text-align: center; font-size: 13px;" >Figure 3. The second approach: A hook structure</figcaption>
+            </figure>
+            <br/>
+        </div>
+
+        <div class="col-md-8 col-md-offset-2">
+            <p>Furthermore, we added a spring which makes rake element return to the lower position for continuing to
+                draw even if the rake goes up due to obstacles.
+            </p>
+
+
+        </div>
+        <div class="col-md-8 col-md-offset-2" style="text-align:center ;">
+            <figure>
+                <video autoplay muted loop controls style ="height: 350px; width: auto; margin: 5px" >
+                    <source src="img/open with obstacle.mp4" type="video/mp4">
+                </video>
+                <video autoplay muted loop controls style="height: 350px; width: auto; margin:5px">
+                    <source src="img/testing with pin ver.mp4" type="video/mp4">
+                </video>
+                <figcaption style="text-align: center; font-size: 13px;" >Figure 4. Spring helps rake element return
+                    to the lower position (Left: The guide structure, Right: The hook structure.)
+            </figure>
+
         </div>
     </div>
 
