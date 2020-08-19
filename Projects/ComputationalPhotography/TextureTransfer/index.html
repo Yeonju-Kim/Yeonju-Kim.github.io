@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Yeonju Kim</title>
+    <link rel="icon" href="../../../img/icon.png" type="../../../image/x-icon">
+    <!-- Bootstrap -->
+    <link href="../../../css/bootstrap.min.css" rel="stylesheet">
+    <link href="../../../ionicons/css/ionicons.min.css" rel="stylesheet">
+    <link href="../../../css/animate.min.css" rel="stylesheet">
+    <link href="../../../css/aos.css" rel="stylesheet">
+    <!-- main style -->
+    <link href="../../../css/style.css" rel="stylesheet">
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <style>
+        #contents {
+            padding: 160px 0;
+        }
+                img {
+           display : block;
+            margin : auto;
+            }
+       .center{
+            margin:auto;
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <!-- Preloader -->
+    <div id="preloader">
+        <div id="status">
+            <div class="preloader" aria-busy="true" aria-label="Loading, please wait." role="progressbar">
+            </div>
+        </div>
+    </div>
+    <!-- ./Preloader -->
+
+    <!-- header -->
+    <header class="navbar-fixed-top">
+        <nav >
+            <ul>
+                <li><a href="../../../index.html#about">Home</a></li>
+                <li><a href="../../../index.html#projects">projects</a></li>
+                <li><a href="../../../index.html#experience">experience</a></li>
+                <li><a href="../../../index.html#education">education</a></li>
+                <li><a href="../../../index.html#contact">contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    <div class="section" id="contents">
+        <div class="col-md-8 col-md-offset-2">
+            <h2>Image Quilting & Texture Transfer</h2>
+            <h4>[CS445]Computational Photography (Instructor: Prof. Derek Hoiem) </h4>
+            <div class="h-50"></div>
+            <p>
+                Reference article is SIGGRAPH 2001 <a href="https://people.eecs.berkeley.edu/~efros/research/quilting/quilting.pdf">paper</a>
+                by Efros and Freeman.
+            </p>
+            <h3>
+                Part 1. Image Quilting by Cutting after Seam Finding
+            </h3>
+            <p>
+                Image Quilting is used as a fast and very simple texture synthesis algorithm.
+                Seam finding method makes image quilting look much more seamless than using random sampling or overlapping patches.
+            To describe how the cut function works, here is one example of seam finding with the following figure.
+            To simplify, I did seam finding with two blocks that are overlapped in the top row. First graph is two overlapped blocks.
+             Second graph is the cost function over overlapped area. More white means that the overlapped pixels have a bigger difference in RGB values.
+            Third graph is a mask created by cut function, and the boundary between black and white area is Min-Cost path found by the cut function.
+            After applying the masks and summing up, we can create a seamless image.
+            </p>
+            <div class=" col-md-10 col-md-offset-1">
+                <div style="position:relative; display:table-cell; vertical-align:middle; padding: 10px;">
+                    <figure >
+                       <img src="img/oatmeal_sample.png" class="img-responsive">
+                       <figcaption style="text-align: center; font-size: 13px;" >Figure 1. Input Texture </figcaption>
+                    </figure>
+                </div>
+                <div style="position:relative; display:table-cell; vertical-align:middle;padding: 10px;">
+                    <figure >
+                       <img src="img/mask.png" class="img-responsive" style="padding:10px;">
+                        <figcaption style="text-align: center; font-size: 13px;" >Figure 2. Illustration of the Seam Finding  </figcaption>
+                    </figure>
+                </div>
+            </div>
+            <div style="width:80%; margin:auto;" >
+            <figure>
+                <img src="img/oatmeal_quilting.png" class="img-responsive" />
+               <figcaption style="text-align: center; font-size: 13px;" >Figure 3. right to left: random placement of blocks, neighboring blocks
+                   constrained by overlap, and Seam Finding technique
+               </figcaption>
+            </figure>
+            <br/>
+            <figure>
+                <img src="img/marble_quilting.png" class="img-responsive" />
+               <figcaption style="text-align: center; font-size: 13px;" >Figure 4. Marble Pattern
+               </figcaption>
+            </figure>
+            <br/>
+        </div>
+        </div>
+
+
+
+
+        <div class="col-md-8 col-md-offset-2">
+            <h3>
+                Part 2. Texture Transfer
+            </h3>
+            <p>
+            The source Image is a part of the painting by Georges Seurat which is one of the most famous pointilism painting.
+                I turned this image to GRAY scale, because costs caused by color difference over overlapped
+                area can make errors in the texture transferred image.
+            </p>
+            <div style=" width:80%; margin:auto;">
+                    <figure>
+                       <img src="img/dot.png" class="img-responsive" />
+                       <figcaption style="text-align: center; font-size: 13px;" >Figure 5, 6. (Left) Part of "A Sunday Afternoon on the Island of La Grande Jatte",
+                           Painting by Georges Seurat, (Right)Image converted to Grayscale </figcaption>
+                    </figure>
+             </div>
+            <br/>
+
+            <p>
+The weight and alpha determines the tradeoff between the texture synthesis and the fidelity to the target image correspondence map.
+                I used image intensities for correspondence map and set alpha as 0.1 which is same with alpha for 1st
+                iteration of texture transfer in the article. I used my face as a first target image.
+            </p>
+            <div class="col-md-10 col-md-offset-1">
+                <figure>
+                    <img src ="img/bigger_yj.png" class="img-responsive"/>
+                    <figcaption style="text-align: center; font-size: 13px;" >Figure 7. Texture transfer result: My Face</figcaption>
+                </figure>
+                <br/>
+                <figure>
+                    <img src ="img/2ssz15.png" class="img-responsive"/>
+                    <figcaption style="text-align: center; font-size: 13px;" >Figure 8. Texture transfer result: Baby Elephant and My Friend</figcaption>
+                </figure>
+            </div>
+
+        </div>
+        <br/>
+    </div>
+
+
+    <!-- jQuery -->
+    <script src="../../../js/jquery.js"></script>
+    <!--  plugins  -->
+    <script src="../../../js/bootstrap.min.js"></script>
+    <script src="../../../js/plugins.js"></script>    <script src="../../../js/aos.js"></script>
+    <script src="../../../js/jquery.form.js"></script>
+    <script src="../../../js/jquery.validate.min.js"></script>
+
+    <!--  main script  -->
+    <script src="../../../js/custom.js"></script>
+</body>
+
+</html>
