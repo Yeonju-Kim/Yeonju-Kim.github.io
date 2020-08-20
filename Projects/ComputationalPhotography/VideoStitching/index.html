@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Yeonju Kim</title>
+    <link rel="icon" href="../../../img/icon.png" type="../../../image/x-icon">
+    <!-- Bootstrap -->
+    <link href="../../../css/bootstrap.min.css" rel="stylesheet">
+    <link href="../../../ionicons/css/ionicons.min.css" rel="stylesheet">
+    <link href="../../../css/animate.min.css" rel="stylesheet">
+    <link href="../../../css/aos.css" rel="stylesheet">
+    <!-- main style -->
+    <link href="../../../css/style.css" rel="stylesheet">
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <style>
+        #contents {
+            padding: 160px 0;
+        }
+                img {
+           display : block;
+            margin : auto;
+            }
+       .center{
+            margin-left:auto;
+            margin-right:auto;
+                display: block;
+
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <!-- Preloader -->
+    <div id="preloader">
+        <div id="status">
+            <div class="preloader" aria-busy="true" aria-label="Loading, please wait." role="progressbar">
+            </div>
+        </div>
+    </div>
+    <!-- ./Preloader -->
+
+    <!-- header -->
+    <header class="navbar-fixed-top">
+        <nav >
+            <ul>
+                <li><a href="../../../index.html#about">Home</a></li>
+                <li><a href="../../../index.html#projects">projects</a></li>
+                <li><a href="../../../index.html#experience">experience</a></li>
+                <li><a href="../../../index.html#education">education</a></li>
+                <li><a href="../../../index.html#contact">contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    <div class="section" id="contents">
+        <div class="col-md-8 col-md-offset-2">
+            <h2>Video Stitching and Processing</h2>
+            <h4>[CS445]Computational Photography (Instructor: Prof. Derek Hoiem) </h4>
+            <div class="h-50"></div>
+            <h3>Part 1. Background Subtraction </h3>
+            <p>
+        In this project, I apply transformations to each frame in the video and create a panorama image from the video.
+        I've learned how to compute homography between two frames by using the extracted key points in images, and
+        how to map other frames onto the reference frame.
+                Then, I could create a background panorama and the corresponding movie by removing moving objects.
+        The foreground movie is created by subtracting background color, which contains only the pixels of moving things.
+
+                    </p>
+            <h4>Panorama using five key frames</h4>
+            <div style="text-align:center ;">
+
+            <figure>
+                <img  src="img/part2_2.png" class="img-responsive" style="height:350px; margin:0 auto;"/>
+                <figcaption>Figure 1. Panorama using Five Key Frames</figcaption>
+            </figure></div>
+            <h4> Map the video to the reference plane</h4>
+                        <div style="text-align:center ;">
+
+                <figure>
+                    <video controls width ="90%" autoplay loop >
+                        <source src="img/second_out.mp4" type="video/mp4">
+                    </video>
+                    <figcaption>Figure 2. Video Mapping to the Reference Plane </figcaption>
+                </figure>
+                        </div>
+            <h4> Create background panorama</h4>
+                        <div style="text-align:center ;">
+
+                <figure>
+                    <img  src="img/second_background.jpg" class="img-responsive" style="width :90%; margin:0 auto;"/>
+                    <figcaption>Figure 3. Background Panorama</figcaption>
+
+                </figure>
+                        </div>
+            <h4> Create background movie & foreground movie</h4>
+            <div style="text-align:center ;">
+                 <figure>
+                    <video controls width= "60%" autoplay loop >
+                    <source src="img/second_background.mp4"
+                            type="video/mp4">
+                    </video>
+                    <figcaption>Figure 4. Background movie</figcaption>
+
+                 </figure>
+                <br/>
+                <figure>
+                    <video controls  width = "60%" autoplay loop  >
+                        <source src="img/second_foreground.mp4"
+                                type="video/mp4">
+                    </video>
+                    <figcaption >Figure 5. Foreground movie</figcaption>
+                </figure>
+            </div>
+
+        </div>
+
+
+        <div class="col-md-8 col-md-offset-2">
+            <h3>
+                Part 2. Insert an unexpected object in the video
+            </h3>
+            <p>
+            For the Bells and Whistles, I inserted a blue ball into the original video.
+                The object should be below foreground pixels and above background pixels. And it should be fixed on the ground, so its position does not change during video playback.
+                I've used the inverse of homography matrixes that are already computed in the previous part.
+            </p>
+
+            <figure>
+                <video controls width = "80%" autoplay class="center" >
+                <source src="img/second_object.mp4"
+                        type="video/mp4">
+                </video>
+            </figure>
+            <br/>
+            <br/>
+            <br/>
+
+        </div>
+    </div>
+
+
+    <!-- jQuery -->
+    <script src="../../../js/jquery.js"></script>
+    <!--  plugins  -->
+    <script src="../../../js/bootstrap.min.js"></script>
+    <script src="../../../js/plugins.js"></script>    <script src="../../../js/aos.js"></script>
+    <script src="../../../js/jquery.form.js"></script>
+    <script src="../../../js/jquery.validate.min.js"></script>
+
+    <!--  main script  -->
+    <script src="../../../js/custom.js"></script>
+</body>
+
+</html>

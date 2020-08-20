@@ -71,13 +71,12 @@
                 Part 1. Image Quilting by Cutting after Seam Finding
             </h3>
             <p>
-                Image Quilting is used as a fast and very simple texture synthesis algorithm.
-                Seam finding method makes image quilting look much more seamless than using random sampling or overlapping patches.
-            To describe how the cut function works, here is one example of seam finding with the following figure.
-            To simplify, I did seam finding with two blocks that are overlapped in the top row. First graph is two overlapped blocks.
-             Second graph is the cost function over overlapped area. More white means that the overlapped pixels have a bigger difference in RGB values.
-            Third graph is a mask created by cut function, and the boundary between black and white area is Min-Cost path found by the cut function.
-            After applying the masks and summing up, we can create a seamless image.
+                Image Quilting is used as a fast and simple texture synthesis algorithm.
+                The seam finding method makes image quilting look much more seamless than using random sampling or overlapping patches.
+                To describe how the cut function works, figure 1 illustrates how the seam finding works. First, overlap two sample patches.
+                Then compute the cost function over the overlapped area. More white means that the overlapped pixels have a big difference in RGB values.
+                The boundary between black and white in the third image is the Min-Cost path found by the cut function.
+                After applying the masks and summing up, we can create a seamless image.
             </p>
             <div class=" col-md-10 col-md-offset-1">
                 <div style="position:relative; display:table-cell; vertical-align:middle; padding: 10px;">
@@ -118,8 +117,8 @@
                 Part 2. Texture Transfer
             </h3>
             <p>
-            The source Image is a part of the painting by Georges Seurat which is one of the most famous pointilism painting.
-                I turned this image to GRAY scale, because costs caused by color difference over overlapped
+            The source image is a part of the painting by Georges Seurat, which is one of the most famous of the Pointillism painting.
+                I turned this image to grayscale as costs caused by color difference over the overlapped
                 area can make errors in the texture transferred image.
             </p>
             <div style=" width:80%; margin:auto;">
@@ -132,9 +131,9 @@
             <br/>
 
             <p>
-The weight and alpha determines the tradeoff between the texture synthesis and the fidelity to the target image correspondence map.
-                I used image intensities for correspondence map and set alpha as 0.1 which is same with alpha for 1st
-                iteration of texture transfer in the article. I used my face as a first target image.
+                The weight and alpha determine the tradeoff between the texture synthesis and the fidelity to the target image correspondence map.
+                I used image intensities as a correspondence map and set alpha as 0.1 which is same with alpha for 1st
+                iteration of texture transfer in the paper.
             </p>
             <div class="col-md-10 col-md-offset-1">
                 <figure>
