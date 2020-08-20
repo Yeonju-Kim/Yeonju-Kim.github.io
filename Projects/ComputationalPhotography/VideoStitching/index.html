@@ -68,11 +68,12 @@
             <div class="h-50"></div>
             <h3>Part 1. Background Subtraction </h3>
             <p>
-        In this project, I apply transformations to each frame in the video and create a panorama image from the video.
-        I've learned how to compute homography between two frames by using the extracted key points in images, and
-        how to map other frames onto the reference frame.
-                Then, I could create a background panorama and the corresponding movie by removing moving objects.
-        The foreground movie is created by subtracting background color, which contains only the pixels of moving things.
+                The first goal of this project is to generate a movie that only includes moving objects.
+                First, I compute Homography between two frames by using the extracted keypoints in images
+                and map another frame onto the reference frame.
+                Then, I create a background panorama by taking the mean value over overlapped pixels to remove moving objects
+                and map it to the movie coordinates to create a background movie.
+        Finally, a foreground movie is created by subtracting background color to make it contain only the pixels of moving things.
 
                     </p>
             <h4>Panorama using five key frames</h4>
@@ -130,8 +131,9 @@
             </h3>
             <p>
             For the Bells and Whistles, I inserted a blue ball into the original video.
-                The object should be below foreground pixels and above background pixels. And it should be fixed on the ground, so its position does not change during video playback.
-                I've used the inverse of homography matrixes that are already computed in the previous part.
+                The object should be below foreground pixels and above background pixels. And it should be fixed on the ground,
+                so its position does not change during video playback.
+                I used the inverse of homography matrices that are already computed in the previous part.
             </p>
 
             <figure>
