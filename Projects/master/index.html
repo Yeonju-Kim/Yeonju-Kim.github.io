@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Yeonju Kim</title>
+    <link rel="icon" href="../../../img/icon.png" type="../../../image/x-icon">
+    <!-- Bootstrap -->
+    <link href="../../../css/bootstrap.min.css" rel="stylesheet">
+    <link href="../../../ionicons/css/ionicons.min.css" rel="stylesheet">
+    <link href="../../../css/animate.min.css" rel="stylesheet">
+    <link href="../../../css/aos.css" rel="stylesheet">
+    <!-- main style -->
+    <link href="../../../css/style.css" rel="stylesheet">
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <style>
+        #contents {
+            padding: 160px 0;
+        }
+                img {
+           display : block;
+            margin : auto;
+            }
+       .center{
+            margin-left:auto;
+            margin-right:auto;
+            display: block;
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <!-- Preloader -->
+    <div id="preloader">
+        <div id="status">
+            <div class="preloader" aria-busy="true" aria-label="Loading, please wait." role="progressbar">
+            </div>
+        </div>
+    </div>
+    <!-- ./Preloader -->
+
+    <!-- header -->
+    <header class="navbar-fixed-top">
+        <nav >
+            <ul>
+                <li><a href="../../../index.html#about">Home</a></li>
+                <li><a href="../../../index.html#projects">projects</a></li>
+                <li><a href="../../../index.html#experience">experience</a></li>
+                <li><a href="../../../index.html#education">education</a></li>
+                <li><a href="../../../index.html#contact">contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    <div class="section" id="contents">
+        <div class="col-md-8 col-md-offset-2">
+            <h2></h2>
+            <h4>Research supervised by professor Kris Hauser</h4>
+            <div class="h-50"></div>
+            <h3>1. Overview</h3>
+            <p>
+                Painting on the wall in a picture without considering 3D information is likely to look unrealistic and unnatural.
+                In this project, we made a pipeline that creates realistic graffiti on the walls in a picture.
+                 We used the <a href="https://colmap.github.io/install.html">COLMAP</a> to obtain a sparse point cloud from images.
+                The first step is to compute <strong>the projection matrix</strong> between the 3d coordinates and the 2d image plane.
+                Then <strong>warp</strong> the image to make it parallel to the image plane axes. Now we're ready to paint on the wall!
+            </p>
+            <p>
+                The next steps are including <strong>image segmentation</strong> and a <strong>blending technique</strong>.
+                To avoid drawing on the window of the building, we segment the wall pixels from the background in an image by using the Graph-Cut Algorithm.
+                Then blend the new painting on the foreground pixels.
+                We've compared two blending methods: (i) Laplacian blending, and (ii) Gradient-based domain fusion using mixed gradients.
+                Laplacian blending keeps taking the texture from the source image, however,
+                the gradient-based domain fusion enables the texture of bricks to be preserved.
+            </p>
+
+            <div style="text-align:center ;">
+            <figure>
+                <img  src="img/goal.png" class="img-responsive" style="width:90%; margin:0 auto;"/>
+                <figcaption style="text-align: center; font-size: 13px;">Figure 1. Goal: Create a graffiti on the wall by taking into account its 3D structure.</figcaption>
+            </figure></div>
+            <br/>
+            <br/>
+
+            <h4>Image transformation Pipeline</h4>
+            <div style="text-align:center ;">
+            <figure>
+                <img  src="img/image_tf.png" class="img-responsive" style="width:80%; margin:0 auto;"/>
+<!--                <figcaption>Figure 2. </figcaption>-->
+            </figure></div>
+
+            <h4>Wall Painting Pipeline</h4>
+            <div style="text-align:center;">
+            <figure>
+                <img  src="img/wall_painting.png" class="img-responsive" style="width:80%; margin:0 auto;"/>
+<!--                <figcaption>Figure 3. </figcaption>-->
+            </figure></div>
+            <h3>2. Results</h3>
+            <div style="text-align:center;">
+                <figure>
+                    <img  src="img/result1.png" class="img-responsive" style="width:90%; margin:0 auto;"/>
+                    <figcaption style="text-align: center; font-size: 13px;">Figure 2.Left to Right: Source Image, Laplacian Blending, and Gradient Domain Fusion using Mixed Gradients </figcaption>
+                </figure>
+            </div>
+            <br/>
+            <div style="text-align:center;">
+                <figure>
+                    <img  src="img/result2.png" class="img-responsive" style="width:90%; margin:0 auto;"/>
+                    <figcaption style="text-align: center; font-size: 13px;">Figure 3. Left to Right: Source Image, Laplacian Blending, and Gradient Domain Fusion using Mixed Gradients </figcaption>
+                </figure>
+            </div>
+            <br/>
+            <br/>
+
+        </div>
+
+    </div>
+
+
+    <!-- jQuery -->
+    <script src="../../../js/jquery.js"></script>
+    <!--  plugins  -->
+    <script src="../../../js/bootstrap.min.js"></script>
+    <script src="../../../js/plugins.js"></script>    <script src="../../../js/aos.js"></script>
+    <script src="../../../js/jquery.form.js"></script>
+    <script src="../../../js/jquery.validate.min.js"></script>
+
+    <!--  main script  -->
+    <script src="../../../js/custom.js"></script>
+</body>
+
+</html>
