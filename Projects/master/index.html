@@ -73,32 +73,25 @@
         <div class="col-md-8 col-md-offset-2">
             <h2>MO-BBO: Multi-Objective Bilevel Bayesian Optimization for Robot and Behavior Co-Design </h2>
             <h4>Research supervised by Professor Kris Hauser</h4>
-            <div class="h-50"></div>
-            <h3>1. Overview</h3>
+            <div style="text-decoration: underline; gap: 10px; display: flex; margin-bottom: 50px;">
+                <a href="ICRA2021_Kim_RobotDesignOpt.pdf">[ICRA 2021 Paper]</a>
+                <a href="KIM-THESIS-2021.pdf">[Master's Thesis]</a>
+            </div>
+
+            <h3>1. Abstract</h3>
             <p>
-                Robot design is complicated because of the time-consuming performance evaluation, multiple performance metrics
-                to be optimized, and behavior optimization requirements in as many environments as possible. We propose multi-objective
-                Bilevel Bayesian optimization (MO-BBO) technique to automate the process of form-behavior co-design.
+                Robot design is a time-consuming process involving repeated experiments in a variety of environments
+                to optimize multiple, possibly conflicting performance metrics. Moreover, the optimal robot performance for a given
+                design depends on how the robot adapts its behavior to its environment. We propose a multi-objective Bilevel Bayesian
+                optimization (MO-BBO) technique to automate the process of form-behavior co-design. The approach expands the Pareto
+                front of multiple metrics by simultaneously exploring the robot design and behavior. MO-BBO uses a bilevel optimization of the
+                acquisition function with design and behavior parameters being the high- and low-level decision variables, respectively. In the
+                low-level, we always choose environment-aware behaviors that maximize each metric. We evaluate MO-BBO in applications
+                to grasping gripper design and bimanual arm placement, and show that our method can efficiently focus samples on the
+                Pareto front and generate a diversity of designs.
             </p>
 
-<!--            <p>-->
-<!--                Painting on the wall in a picture without considering 3D information is likely to look unrealistic and unnatural.-->
-<!--                In this project, we made a pipeline that creates realistic graffiti on the walls in a picture.-->
-<!--                 We used the <a href="https://colmap.github.io/install.html">COLMAP</a> to obtain a sparse point cloud from images.-->
-<!--                The first step is to compute <strong>the projection matrix</strong> between the 3d coordinates and the 2d image plane.-->
-<!--                Then <strong>warp</strong> the image to make it parallel to the image plane axes. Now we're ready to paint on the wall!-->
-<!--            </p>-->
-<!--            <p>-->
-<!--                The next steps are including <strong>image segmentation</strong> and a <strong>blending technique</strong>.-->
-<!--                To avoid drawing on the window of the building, we segment the wall pixels from the background in an image by using the Graph-Cut Algorithm.-->
-<!--                Then blend the new painting on the foreground pixels.-->
-<!--                We've compared two blending methods: (i) Laplacian blending, and (ii) Gradient-based domain fusion using mixed gradients.-->
-<!--                Laplacian blending keeps taking the texture from the source image, however,-->
-<!--                the gradient-based domain fusion enables the texture of bricks to be preserved.-->
-<!--            </p>-->
-
             <div style="text-align:center;">
-
                 <figure>
                     <img  src="img/Figure_1.png" class="img-responsive" style="width:60%; margin:0 auto;"/>
                     <figcaption style="text-align: left; font-size: 13px;width:55%; margin:0 auto;">Figure 1. Metric values of 200 gripper designs explored by MO-BBO, of which 13 designs are on the Pareto front </figcaption>
